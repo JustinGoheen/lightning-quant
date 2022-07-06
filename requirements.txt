@@ -1,4 +1,5 @@
-# BASE [DO NOT DELETE]
+# BASE
+ib_insync
 lightning
 pytorch-lightning
 lightning-grid
@@ -8,13 +9,10 @@ colorama
 tabulate
 # FUNDAMENTAL ML
 scikit-learn
+## ML ##
 # TEXT
 lightning-transformers
 torchtext
-# VISION
-torchvision
-# AUDIO
-torchaudio
 # LIGHTNING ECOSYSTEM
 lightning-bolts
 lightning-flash
@@ -22,6 +20,17 @@ lightning-flash
 optuna
 # VS CODE TENSORBOARD SUPPORT
 torch-tb-profiler
+## QUANT ##
+yfinance
+QuantLib
+pyarrow
+zipline-reloaded
+empyrical-reloaded
+pyfolio-reloaded
+alphalens-reloaded
+## GENERAL ##
+# STREAMS
+pyzmq
 # PLOTTING AND SYMBOLIC MATH
 plotly
 matplotlib
@@ -38,11 +47,3 @@ ipywidgets
 dash
 dash-bootstrap-components
 gunicorn
-# DOC TOOLS, MARKDOWN SUPPORT, THEMES
-sphinx
-myst-parser
-sphinx_rtd_theme
-pydata-sphinx-theme
-pt-lightning-sphinx-theme @ https://github.com/PyTorchLightning/lightning_sphinx_theme/archive/master.zip
-# PIN PROTOBUF TO 3.20 TO AVOID 4.12 ERRORS IN CI/CD
-protobuf==3.20.1
