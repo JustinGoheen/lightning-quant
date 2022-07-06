@@ -22,8 +22,8 @@ def _preserve_dir(main_source_dir: str, sub_source_dir: str, destination: str):
 
 
 def preserve_examples():
-    _preserve_dir(PKGPATH, "core", "examples")
-    _preserve_dir(PKGPATH, "pipeline", "examples")
+    _preserve_dir(PKGPATH.name, "core", "examples")
+    _preserve_dir(PKGPATH.name, "pipeline", "examples")
 
 
 def _clean_and_build_package(module_to_copy):

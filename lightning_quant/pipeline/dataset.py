@@ -1,6 +1,3 @@
-from torchvision.datasets import MNIST
-
-
-class LitDataset(MNIST):
+class LitDataset:
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

@@ -18,13 +18,13 @@ PROJECTPATH = os.getcwd()
 
 @hydra.main(
     config_path=filepath.parent,
-    config_name="trainer",
+    config_name="trainer_config",
     version_base=hydra.__version__,
 )
 def main(cfg):
     # SET LOGGER
     logs_dir = os.path.join(PROJECTPATH, "logs")
-    logger = TensorBoardLogger(logs_dir, name="logger")
+    logger = TensorBoardLogger(logs_dir, name="lightning_logs")
     # SET PROFILER
     profile_dir = os.path.join(logs_dir, "profiler")
     profiler = PyTorchProfiler(dirpath=profile_dir, filename="profiler")
@@ -101,13 +101,12 @@ def main(cfg):
     )
     # TRAIN MODEL
     trainer.fit(model=model, datamodule=datamodule)
-    # IF NOT FAST DEV RUN: TEST, PREDICT, PERSIST
+    # IF NOT FAST DEV RUN, THEN TEST, PERSIST, MAKE AND EXPORT PREDICTIONS
     if not cfg.trainer.fast_dev_run:
         # TEST MODEL
         trainer.test(ckpt_path="best", datamodule=datamodule)
         # PERSIST MODEL
-        # TODO write util to search models dir and append version number
-        pretrained_dir = os.path.join(PROJECTPATH, "models", "onnx")
+        pretrained_dir = os.path.join(PROJECTPATH, "models", "production")
         modelpath = os.path.join(pretrained_dir, "model.onnx")
         input_sample = datamodule.train_data.dataset[0][0]
         model.to_onnx(modelpath, input_sample=input_sample, export_params=True)
