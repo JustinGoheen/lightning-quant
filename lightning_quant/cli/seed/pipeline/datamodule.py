@@ -1,11 +1,9 @@
 import os
-import errno
 import multiprocessing
 from pathlib import Path
 from pytorch_lightning import LightningDataModule
 from torch.utils.data import Dataset, DataLoader, random_split
-from torchvision import transforms
-from lightning_pod.pipeline.dataset import LitDataset
+from lightning_quant.pipeline.dataset import LitDataset
 
 
 filepath = Path(__file__)
@@ -21,7 +19,7 @@ class LitDataModule(LightningDataModule):
         split: bool = True,
         train_size: float = 0.8,
         num_workers: int = NUMWORKERS,
-        transforms=transforms.ToTensor(),
+        transforms=None,
     ):
         super().__init__()
         self.data_dir = os.path.join(PROJECTPATH, data_dir, "cache")

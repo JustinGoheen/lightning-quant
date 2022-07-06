@@ -1,10 +1,10 @@
 import os
 import click
-from lightning_pod.cli.utils import teardown
-from lightning_pod.cli.utils import build
+from lightning_quant.cli.utils import teardown
+from lightning_quant.cli.utils import build
 from rich import print as rprint
-from lightning_pod.cli.utils import show_destructive_behavior_warning
-from lightning_pod.cli.utils import common_destructive_flow
+from lightning_quant.cli.utils import show_destructive_behavior_warning
+from lightning_quant.cli.utils import common_destructive_flow
 
 
 @click.group()

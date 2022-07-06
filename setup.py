@@ -4,19 +4,19 @@ from pathlib import Path
 
 console_scripts = """
 [console_scripts]
-pod=lightning_pod.cli.console:main
+pod=lightning_quant.cli.console:main
 """
 
 rootdir = Path(__file__).parent
 long_description = (rootdir / "README.md").read_text()
 
 setup(
-    name="lightning-pod",
-    version="0.0.4.1",
-    description="A Lightning.ai application seed",
+    name="lightning-quant",
+    version="0.0.1",
+    description="A LightningAI framework for the Interactive Brokers TWS API",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/JustinGoheen/lightning-pod",
+    url="https://github.com/JustinGoheen/lightning-quant",
     author="Justin Goheen",
     license="Apache 2.0",
     install_requires=[],

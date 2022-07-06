@@ -7,8 +7,8 @@ from pytorch_lightning import Trainer, seed_everything
 from pytorch_lightning.loggers import TensorBoardLogger
 from pytorch_lightning.profiler import PyTorchProfiler
 from pytorch_lightning.callbacks import ModelCheckpoint, EarlyStopping
-from lightning_pod.pipeline.datamodule import LitDataModule
-from lightning_pod.core.module import LitModel
+from lightning_quant.pipeline.datamodule import LitDataModule
+from lightning_quant.core.module import LitModel
 
 
 # SET PATHS
